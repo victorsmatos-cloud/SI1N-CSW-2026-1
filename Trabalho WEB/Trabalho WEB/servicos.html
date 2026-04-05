@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços |  Victor dos Santos Matos</title>
+<link rel="icon" href="img/icon servico.png">
+</head>
+<body>
+    <a href="index.html">🏠 Voltar para página inicial.</a>
+    <h1>Serviços oferecidos:</h1>
+    <style>
+    .services-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-family: sans-serif;
+    }
+    .services-table th, .services-table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+    .services-table th {
+        background-color: #2c3e50;
+        color: white;
+    }
+    .price-tag {
+        font-weight: bold;
+        color: #27ae60;
+    }
+    .contact-form {
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 30px;
+        border: 1px solid #ddd;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .form-group input, .form-group textarea, .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    .btn-submit {
+        background-color: #2c3e50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .btn-submit:hover {
+        background-color: #34495e;
+    }
+</style>
+
+<h2>Serviços de Desenvolvimento Web</h2>
+<table class="services-table">
+    <thead>
+        <tr>
+            <th>Tipo de Projeto</th>
+            <th>Descrição / Exemplos</th>
+            <th>Investimento Estimado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Páginas Estáticas (1 a 2)</strong></td>
+            <td>Landing Pages, Cartão de Visita Digital, Portfólio Simples.</td>
+            <td class="price-tag">A partir de R$ 400,00</td>
+        </tr>
+        <tr>
+            <td><strong>Páginas Estáticas (3 a 5)</strong></td>
+            <td>Sites Institucionais para Restaurantes, Academias e Clínicas.</td>
+            <td class="price-tag">A partir de R$ 800,00</td>
+        </tr>
+        <tr>
+            <td><strong>Páginas Estáticas (+ de 5)</strong></td>
+            <td>Projetos completos com múltiplas seções de serviços e galeria.</td>
+            <td class="price-tag">Sob demanda(faça seu orçamento)</td>
+        </tr>
+        <tr>
+            <td><strong>Páginas Dinâmicas / Avançadas</strong></td>
+            <td>Sistemas com login, painéis administrativos ou integração com banco de dados.</td>
+            <td class="price-tag">A partir de R$ 1.500,00</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><em>*Exemplos de nichos atendidos: Restaurantes, Academias, Livrarias, Cafeterias, Escolinhas de Futebol/Vôlei e Comércio Local.</em></p>
+
+<div class="contact-form">
+    <h3>Solicite um Orçamento</h3>
+    <form action="#" method="POST">
+        <div class="form-group">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required placeholder="Ex: João Silva">
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail para contato:</label>
+            <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
+        </div>
+        <div class="form-group">
+            <label for="servico">Tipo de Projeto:</label>
+            <select id="servico" name="servico">
+                <option value="estatico-pequeno">Site Estático (1-2 páginas)</option>
+                <option value="estatico-medio">Site Estático (3-5 páginas)</option>
+                <option value="estatico-grande">Site Estático (+5 páginas)</option>
+                <option value="dinamico">Página Dinâmica / Avançada</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="mensagem">Conte um pouco sobre sua demanda:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva brevemente o seu negócio e o que você precisa no site..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar Pedido de Proposta</button>
+    </form>
+</div>
+<br>
+<hr>
+<br>
+<footer>
+      <div class="container">
+        <p>&copy; 2025 <strong>Victor dos Santos Matos</strong> · Vila Velha – ES · <a
+            href="mailto:smatosvictor@gmail.com">smatosvictor@gmail.com</a></p>
+        <p style="margin-top:0.5rem;">
+          <a href="index.html">Home</a> &nbsp;·&nbsp;
+          <a href="curriculo.html">Currículo</a> &nbsp;·&nbsp;
+          <a href="github.html">GitHub</a> &nbsp;·&nbsp;
+          <a href="servicos.html">Serviços</a> &nbsp;·&nbsp;
+          <a href="contato.html">Contato</a>
+        </p>
+      </div>
+    </footer>
+</body>
+</html>
