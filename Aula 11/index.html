@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 11</title>
+    <style>
+        body {
+            background-color: rgba(91, 110, 112, 0.658); /*Cor da tela de Fundo*/
+        }
+        .container { /* Estilos para as Divs*/
+            background-color: aliceblue;   /*Cor do ID*/
+            border: 2px solid black;      /* Borda para separação clara*/
+            padding: 20px;            /* Espaçamento interno*/
+            margin-bottom: 20px;             /* Espaçamento entre as caixas*/
+        }
+
+        /* Estilo base dos links            <COR PADRÃO DOS LINKS>         */
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color: blue;
+            transition: 0.3s;
+        }
+
+        /* Mudar de cor ao passar o mouse (Requisito: :hover)          <PSEUDO-CLASS :>      */
+        a:hover {
+            color: orange;
+        }
+
+        /* Mudar de cor ao clicar (Requisito: :active)                <PSEUDO-CLASS :>         */
+        a:active {
+            color: red;
+        }
+
+        /* Símbolos antes e depois do link (Requisito: ::before e ::after)     <PSEUDO-ELEMENTO : :>    */
+        a::before {
+            content: "« ";
+        }
+
+        a::after {
+            content: " »";
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="Titulo">Aula 11 - ID E CLASS</h1> <!--Titulo -->
+        </div>
+    </header>
+
+    <div class="container">
+
+        <h2 class="SubTitulo">Minha Lista de Música</h2>
+        <p><a href="#">Spotify ♬</a></p>
+        <p><a href="#">YouTube ♬</a></p>
+    </div>
+
+    <div class="container">
+        <h2 class="SubTitulo">Outros Serviços</h2>
+        <p><a href="#">Amazon Music ♬</a></p>
+    </div>
+
+</body>
+
+</html>
