@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Idade Simples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            padding: 20px;
+            max-width: 300px;
+            border: 1px solid #050505;
+            border-radius: 10px;
+        }
+        div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+
+            margin-bottom: 5px;
+        }
+        input, button {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h3 {
+            color: #333;
+        }
+        {
+            f
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Calculadora de Idade</h2>
+
+    <div>
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento">
+    </div>
+
+    <button onclick="calcularIdade()">Calcular Idade</button>
+
+    <h3 id="resultado"></h3>
+
+    <script>
+        function calcularIdade() {
+            // Pega o valor digitado no input
+            const dataNascimentoInput = document.getElementById('dataNascimento').value;
+            
+            // Se o usuário não selecionar nenhuma data, avisa e para a execução
+            if (!dataNascimentoInput) {
+                alert("Por favor, selecione uma data!");
+                return;
+            }
+
+            const dataNascimento = new Date(dataNascimentoInput);
+            const dataAtual = new Date();
+
+            // Calcula a diferença em anos
+            let idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
+            
+            // Ajusta a idade caso o aniversário ainda não tenha acontecido este ano
+            const mesAtual = dataAtual.getMonth();
+            const diaAtual = dataAtual.getDate();
+            const mesNascimento = dataNascimento.getMonth();
+            const diaNascimento = dataNascimento.getDate();
+
+            if (mesAtual < mesNascimento || (mesAtual === mesNascimento && diaAtual < diaNascimento)) {
+                idade--;
+            }
+
+            // Exibe o resultado na tela
+            document.getElementById('resultado').innerText = "Você tem " + idade + " anos.";
+        }
+    </script>
+
+</body>
+</html>
