@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Idade Simples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: azure;
+            padding: 20px;
+            }
+        select, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: aquamarine;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #7fffd4;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Descubra sua Idade</h2>
+    
+    <select id="dia">
+        <option value="">Dia</option>
+    </select>
+
+    <select id="mes">
+        <option value="">Mês</option>
+        <option value="1">Janeiro</option>
+        <option value="2">Fevereiro</option>
+        <option value="3">Março</option>
+        <option value="4">Abril</option>
+        <option value="5">Maio</option>
+        <option value="6">Junho</option>
+        <option value="7">Julho</option>
+        <option value="8">Agosto</option>
+        <option value="9">Setembro</option>
+        <option value="10">Outubro</option>
+        <option value="11">Novembro</option>
+        <option value="12">Dezembro</option>
+    </select>
+
+    <select id="ano">
+        <option value="">Ano</option>
+    </select>
+
+    <br><br>
+    <button onclick="calcularIdade()">Calcular Idade</button>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+    // 1. Preenche os Dias (1 a 31) automaticamente
+    const selectDia = document.getElementById('dia');
+    for (let i = 1; i <= 31; i++) {
+        const opcao = document.createElement('option');
+        opcao.value = i;
+        opcao.textContent = i;
+        selectDia.appendChild(opcao);
+    }
+
+    // 2. Preenche os Anos automaticamente (do ano atual voltando até 100 anos atrás)
+    const selectAno = document.getElementById('ano');
+    const anoAtual = new Date().getFullYear(); // Pega o ano atual do sistema
+    
+    for (let i = anoAtual; i >= anoAtual - 100; i--) {
+        const opcao = document.createElement('option');
+        opcao.value = i;
+        opcao.textContent = i;
+        selectAno.appendChild(opcao);
+    }
+
+    // 3. Função mágica que faz a conta
+    function calcularIdade() {
+        // Pega os valores selecionados pelo usuário (convertidos para números)
+        const diaNasc = parseInt(document.getElementById('dia').value);
+        const mesNasc = parseInt(document.getElementById('mes').value);
+        const anoNasc = parseInt(document.getElementById('ano').value);
+        const campoResultado = document.getElementById('resultado');
+
+        // Validação simples: verifica se o usuário esqueceu de selecionar algo
+        if (!diaNasc || !mesNasc || !anoNasc) {
+            campoResultado.textContent = "Por favor, selecione a data completa!";
+            return;
+        }
+
+        // Pega a data de hoje
+        const hoje = new Date();
+        const diaAtual = hoje.getDate();
+        const mesAtual = hoje.getMonth() + 1; // Janeiro é 0 no JS, por isso somamos 1
+        const anoAtual = hoje.getFullYear();
+
+        // Conta básica inicial
+        let idade = anoAtual - anoNasc;
+
+        // Ajuste fino: Se a pessoa ainda NÃO fez aniversário no ano atual,
+        // tiramos 1 ano da conta básica.
+        if (mesAtual < mesNasc || (mesAtual === mesNasc && diaAtual < diaNasc)) {
+            idade--;
+        }
+
+        // Exibe o resultado na tela
+        campoResultado.textContent = `Sua idade é: ${idade} anos.`;
+    }
+</script>
+
+</body>
+</html>
